@@ -1,12 +1,12 @@
 Summary:	A program to extract Microsoft Cabinet files
 Name:		cabextract
-Version:	1.5
+Version:	1.6
 Release:	1
 License:	GPL
 Group:		Applications/Archiving
 Source0:	http://www.cabextract.org.uk/%{name}-%{version}.tar.gz
-# Source0-md5:	4e22fc3b36eb028acf2115b44f85930d
-URL:		http://www.cabextract.org.uk/cabextract-1.2.tar.gz
+# Source0-md5:	ee3ded0b1f84e5c6e3309bb36d701916
+URL:		http://www.cabextract.org.uk/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libmspack-devel
@@ -36,8 +36,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -D doc/ja/cabextract.1 $RPM_BUILD_ROOT%{_mandir}/ja/man1/cabextract.1
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -46,5 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%lang(ja) %{_mandir}/ja/man1/*
 
